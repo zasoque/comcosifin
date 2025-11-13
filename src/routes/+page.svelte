@@ -28,9 +28,9 @@
   }
 
   function normalise(str) {
-    return str
-      .toLowerCase()
-      .normalize("NFD")
+    let result = str.toLowerCase().normalize("NFD");
+    result = result.replace(/\([^)]*\)/g, "");
+    return result.trim();
   }
 
   function onTextareaChange(event: Event) {
@@ -39,7 +39,7 @@
     content = target.value;
 
     // get last word
-    const lastWord = normalise(content.split(/\s+/).pop());
+    const lastWord = content.split(/\s+/).pop();
 
     // press number to select candidate
     const numberMatch = lastWord?.match(/(\d)$/);
@@ -66,7 +66,7 @@
         const word = row[titleIndex];
         let distance = Infinity;
         for (const cell in row) {
-          const cellValue = normalise(row[cell]);
+          const cellValue = row[cell];
           if (cellValue.indexOf(lastWord) === -1)
             continue;
 
@@ -75,7 +75,7 @@
 
             let minD = Infinity;
             for (const part of parts) {
-              const dist = levenshteinDistance(lastWord, part);
+              const dist = levenshteinDistance(normalise(lastWord), normalise(part));
               minD = Math.min(minD, dist);
             }
             return minD;
