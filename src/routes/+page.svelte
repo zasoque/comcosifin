@@ -1,5 +1,6 @@
 <script lang="ts">
   import Word from "$lib/components/Word.svelte";
+  import { onMount } from "svelte";
 
   export let data: any;
 
@@ -96,6 +97,11 @@
       candidates = distances.slice(0, 10).map((item) => item.row);
     }
   }
+
+  onMount(() => {
+    const textarea = document.getElementById("input-textarea") as HTMLTextAreaElement;
+    textarea.focus();
+  });
 </script>
 
 <div class="container">
@@ -103,7 +109,7 @@
   <textarea
     oninput={onTextareaChange}
     placeholder="Comcos lo naputome..."
-    autofocus
+    id="input-textarea"
   ></textarea>
   <div class="candidates">
     <ol>
