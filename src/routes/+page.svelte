@@ -2,9 +2,7 @@
   import Word from "$lib/components/Word.svelte";
   import { onMount } from "svelte";
 
-  export let data: any;
-
-  let { dictionary, header } = data;
+  let dictionary, header, titleIndex;
 
   let content = "";
   let candidates: string[] = [];
@@ -35,7 +33,6 @@
       .normalize("NFD")
   }
 
-  const titleIndex = header.indexOf("표제어");
   function onTextareaChange(event: Event) {
     // get textarea content
     const target = event.target as HTMLTextAreaElement;
@@ -97,6 +94,17 @@
   }
 
   onMount(() => {
+    const KEY = "AIzaSyBSaX_PbqIgynBFq7csvxenj3BXro05xo4";
+    const SPREADSHEET_ID = "1QSqIbmShJiUiJWNB0x8dQzGbb6W1dqEz_LBlP363e_E";
+    fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/자소크어!A:L?key=${KEY}`)
+      .then(response => response.json())
+      .then(data => {
+        dictionary = data.values;
+        header = dictionary.shift();
+        titleIndex = header.indexOf("표제어");
+        console.log("Dictionary loaded", dictionary.length, "entries");
+      });
+
     const textarea = document.getElementById("input-textarea") as HTMLTextAreaElement;
     textarea.focus();
   });
