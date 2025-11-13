@@ -67,7 +67,7 @@
         let distance = Infinity;
         for (const cell in row) {
           const cellValue = row[cell];
-          if (cellValue.indexOf(lastWord) === -1)
+          if (normalise(cellValue).indexOf(normalise(lastWord)) === -1)
             continue;
 
           const d = (() => {
