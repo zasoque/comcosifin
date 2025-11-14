@@ -8,6 +8,7 @@
   <link rel="icon" href={favicon} />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
 
     @font-face {
       font-family: 'JoseonGulim';
@@ -16,8 +17,8 @@
       font-display: swap;
     }
 
-    body {
-      font-family: 'Kosugi Maru', 'JoseonGulim', sans-serif;
+    body, textarea {
+      font-family: "Dosis", 'Kosugi Maru', 'JoseonGulim', sans-serif;
     }
   </style>
   <title>Comcosifin</title>
