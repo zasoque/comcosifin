@@ -20,6 +20,16 @@
     body, textarea {
       font-family: "Dosis", 'Kosugi Maru', 'JoseonGulim', sans-serif;
     }
+
+    body {
+      background-color: #ebf2f5;
+      color: #24292e;
+    }
+
+    textarea {
+      background-color: #f6f8fa;
+      color: #24292e;
+    }
   </style>
   <title>Comcosifin</title>
 </svelte:head>
