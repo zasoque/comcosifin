@@ -142,6 +142,7 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
+  line-height: 1.5em;
 }
 
 .title {
@@ -149,5 +150,17 @@ textarea {
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
+}
+
+.candidates {
+  margin-top: 20px;
+}
+
+.candidates ol {
+  padding-left: 20px;
+}
+
+.candidates li {
+  margin-bottom: 10px;
 }
 </style>
