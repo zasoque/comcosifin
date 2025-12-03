@@ -99,6 +99,7 @@
     fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/자소크어!A:L?key=${KEY}`)
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         dictionary = data.values;
         header = dictionary.shift();
         titleIndex = header.indexOf("표제어");

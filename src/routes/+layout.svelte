@@ -8,7 +8,7 @@
   <link rel="icon" href={favicon} />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
 
     @font-face {
       font-family: 'JoseonGulim';
@@ -18,7 +18,7 @@
     }
 
     body, textarea {
-      font-family: "Dosis", 'Kosugi Maru', 'JoseonGulim', sans-serif;
+      font-family: "Manjari", 'Kosugi Maru', 'JoseonGulim', sans-serif;
     }
 
     body {
