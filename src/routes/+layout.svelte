@@ -7,18 +7,11 @@
 <svelte:head>
   <link rel="icon" href={favicon} />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
-
-    @font-face {
-      font-family: 'JoseonGulim';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
-      font-weight: normal;
-      font-display: swap;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
     body, textarea {
-      font-family: "Manjari", 'Kosugi Maru', 'JoseonGulim', sans-serif;
+      font-family: "EB Garamond", "Diphylleia", serif;
     }
 
     body {
