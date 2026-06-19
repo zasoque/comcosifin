@@ -136,12 +136,6 @@
 <div class="container">
   <div class="title">Comcosifin</div>
   <input
-    bind:value={KEY}
-    class="spreadsheet-id"
-    {onkeydown}
-    placeholder="비밀번호"
-  />
-  <input
     bind:value={SPREADSHEET_ID}
     class="spreadsheet-id"
     {onkeydown}
