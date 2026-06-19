@@ -101,10 +101,11 @@
   let SPREADSHEET_ID = $state("1QSqIbmShJiUiJWNB0x8dQzGbb6W1dqEz_LBlP363e_E");
   let KEY = $state("AIzaSyBSaX_PbqIgynBFq7csvxenj3BXro05xo4");
   let sheetName = $state("자소크어");
+  let range = $state("A:L");
 
   function load() {
     fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${sheetName}!A:L?key=${KEY}`,
+      `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${sheetName}!${range}?key=${KEY}`,
     )
       .then((response) => response.json())
       .then((data) => {
@@ -151,13 +152,22 @@
     class="spreadsheet-id"
     type="number"
     min="0"
+    {onkeydown}
     placeholder="표제어 단"
   />
   <input
     bind:value={sheetName}
     class="spreadsheet-id"
     type="text"
+    {onkeydown}
     placeholder="시트 이름"
+  />
+  <input
+    bind:value={range}
+    class="spreadsheet-id"
+    type="text"
+    {onkeydown}
+    placeholder="범위 (예: A:L)"
   />
   <textarea
     oninput={onTextareaChange}
